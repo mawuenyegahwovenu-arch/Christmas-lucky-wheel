@@ -13,9 +13,11 @@
   --accent:#c41e3a;
   --glass: rgba(255,255,255,0.92);
   --card: rgba(255,255,255,0.95);
-  --christmas-1: #0a2e1a;
-  --christmas-2: #1a472a;
-  --christmas-3: #2ecc71;
+  --sea-blue-1: #0c2b4b;    /* Dark sea blue */
+  --sea-blue-2: #1a4a7a;    /* Medium sea blue */
+  --sea-blue-3: #2e8bc0;    /* Light sea blue */
+  --sea-blue-4: #87ceeb;    /* Sky blue */
+  --sea-blue-5: #e6f7ff;    /* Very light sea blue */
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -29,9 +31,9 @@ body{
   justify-content:flex-start;
   background: 
     radial-gradient(circle at 10% 20%, rgba(220,20,60,0.15) 0%, transparent 25%),
-    radial-gradient(circle at 90% 80%, rgba(46,204,113,0.15) 0%, transparent 25%),
-    radial-gradient(circle at 50% 50%, rgba(255,215,0,0.1) 0%, transparent 30%),
-    linear-gradient(to top, var(--christmas-1) 0%, var(--christmas-2) 45%, var(--christmas-3) 100%);
+    radial-gradient(circle at 90% 80%, rgba(255,215,0,0.15) 0%, transparent 25%),
+    radial-gradient(circle at 50% 50%, rgba(46,204,113,0.1) 0%, transparent 30%),
+    linear-gradient(to top, var(--sea-blue-1) 0%, var(--sea-blue-2) 25%, var(--sea-blue-3) 50%, var(--sea-blue-4) 75%, var(--sea-blue-5) 100%);
   color:#0a2e1a;
   padding:20px;
   overflow-x:hidden;
@@ -98,15 +100,15 @@ body{
   font-size:32px;
   margin:6px 0 15px;
   text-shadow:0 6px 18px rgba(0,0,0,0.14);
-  background: linear-gradient(45deg, #c41e3a, #2ecc71, #FFD700);
+  background: linear-gradient(45deg, #c41e3a, #FFD700, #2ecc71);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: titleGlow 3s infinite alternate;
 }
 @keyframes titleGlow {
-  0% { filter: drop-shadow(0 0 5px rgba(220,20,60,0.5)); }
-  100% { filter: drop-shadow(0 0 15px rgba(46,204,113,0.7)); }
+  0% { filter: drop-shadow(0 0 5px rgba(196,30,58,0.5)); }
+  100% { filter: drop-shadow(0 0 15px rgba(255,215,0,0.7)); }
 }
 
 .top-statement {
@@ -116,19 +118,20 @@ body{
   letter-spacing:.4px;
   font-size: 20px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  background: linear-gradient(45deg, #c41e3a, #2ecc71, #FFD700);
+  background: linear-gradient(45deg, #c41e3a, #FFD700, #2ecc71);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   padding: 5px 15px;
   border-radius: 10px;
   background-color: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
 }
 
 /* FIXED: Text overflow for mobile */
 .christmas-message {
   max-width:920px;
-  background: rgba(255,255,255,0.95);
+  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240,248,255,0.98));
   border-radius:15px;
   padding:18px 22px;
   color:#0a2e1a;
@@ -141,7 +144,7 @@ body{
   z-index: 10;
   font-size: 17px;
   line-height: 1.7;
-  border-right: 3px solid #2ecc71;
+  border-right: 3px solid #2e8bc0;
   /* MOBILE FIX: Prevent text overflow */
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -175,7 +178,7 @@ body{
   display: block;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 0 25px rgba(220,20,60,0.4);
+  box-shadow: 0 0 25px rgba(46,139,192,0.4);
   width: 350px !important;
   height: 350px !important;
 }
@@ -207,7 +210,7 @@ body{
   cursor:pointer; 
   border-radius:35px; 
   font-weight:800; 
-  box-shadow:0 15px 35px rgba(139,0,0,0.3); 
+  box-shadow:0 15px 35px rgba(46,139,192,0.3); 
   letter-spacing:1px; 
   overflow: hidden;
   min-height: 60px;
@@ -230,18 +233,18 @@ body{
   transform: translateY(-3px);
 }
 #btn:hover {
-  box-shadow: 0 20px 40px rgba(139,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(46,139,192,0.4);
 }
 #resetBtn{ 
   padding:12px 25px; 
   font-size:18px; 
-  background: linear-gradient(180deg, #2ecc71, #27ae60); 
+  background: linear-gradient(180deg, #2e8bc0, #1a4a7a); 
   border-radius:25px; 
-  box-shadow:0 10px 25px rgba(46,204,113,0.3); 
+  box-shadow:0 10px 25px rgba(46,139,192,0.3); 
   margin-left:15px; 
 }
 #resetBtn:hover {
-  box-shadow: 0 15px 30px rgba(46,204,113,0.4);
+  box-shadow: 0 15px 30px rgba(46,139,192,0.4);
 }
 #btn:active, #resetBtn:active, #muteBtn:active, #shareBtn:active { 
   transform:translateY(3px) scale(.97); 
@@ -291,7 +294,7 @@ body{
   min-height:80px;
   text-shadow:0 10px 30px rgba(0,0,0,0.5);
   padding: 30px 40px;
-  background: linear-gradient(45deg, rgba(220,20,60,0.3), rgba(46,204,113,0.3), rgba(255,215,0,0.3));
+  background: linear-gradient(45deg, rgba(196,30,58,0.3), rgba(46,139,192,0.3), rgba(255,215,0,0.3));
   border-radius: 25px;
   border: 5px solid rgba(255,255,255,0.6);
   text-align: center;
@@ -311,8 +314,8 @@ body{
   overflow-wrap: break-word;
 }
 @keyframes prizeGlow {
-  0% { box-shadow: 0 0 25px rgba(220,20,60,0.5), inset 0 0 25px rgba(255,255,255,0.15); }
-  100% { box-shadow: 0 0 50px rgba(46,204,113,0.7), inset 0 0 35px rgba(255,255,255,0.25); }
+  0% { box-shadow: 0 0 25px rgba(196,30,58,0.5), inset 0 0 25px rgba(255,255,255,0.15); }
+  100% { box-shadow: 0 0 50px rgba(46,139,192,0.7), inset 0 0 35px rgba(255,255,255,0.25); }
 }
 .pop { 
   animation: pop 800ms cubic-bezier(.2,.8,.2,1) forwards; 
@@ -357,7 +360,7 @@ body{
   height: 300px;
   border-radius: 18px;
   border: 5px solid var(--accent);
-  box-shadow: 0 15px 35px rgba(196,30,58,0.2);
+  box-shadow: 0 15px 35px rgba(46,139,192,0.2);
   transition: all 0.4s ease;
   display: block;
   cursor: pointer;
@@ -367,7 +370,7 @@ body{
 
 .video-item:hover {
   transform: scale(1.08);
-  box-shadow: 0 20px 40px rgba(196,30,58,0.4);
+  box-shadow: 0 20px 40px rgba(46,139,192,0.4);
   border-color: #FFD700;
 }
 
@@ -595,7 +598,7 @@ body{
   object-fit: cover;
   border-radius:18px;
   border:5px solid var(--accent);
-  box-shadow:0 15px 35px rgba(196,30,58,0.2);
+  box-shadow:0 15px 35px rgba(46,139,192,0.2);
   transition: all 0.4s ease;
   display:block;
   cursor: pointer;
@@ -625,14 +628,14 @@ body{
 
 #gallery img:hover {
   transform: scale(1.08) rotate(3deg);
-  box-shadow: 0 20px 40px rgba(196,30,58,0.4);
+  box-shadow: 0 20px 40px rgba(46,139,192,0.4);
   border-color: #FFD700;
 }
 
 .caption { 
   margin-top:25px; 
   max-width:720px; 
-  background: linear-gradient(180deg, rgba(255,255,255,0.97), rgba(255,245,250,0.97)); 
+  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240,248,255,0.98)); 
   padding:22px 28px; 
   border-radius:18px; 
   box-shadow: 0 15px 35px rgba(0,0,0,0.12); 
@@ -644,7 +647,7 @@ body{
   white-space:pre-wrap;
   border-top: 4px solid #FFD700;
   border-bottom: 4px solid #c41e3a;
-  border-left: 3px solid #2ecc71;
+  border-left: 3px solid #2e8bc0;
   border-right: 3px solid #9370DB;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -724,24 +727,24 @@ footer {
   margin-top:30px;
   max-width:500px;
   width:100%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.97), rgba(240,248,255,0.97));
+  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240,248,255,0.98));
   border-radius:18px;
   padding:22px 28px;
   box-shadow: 0 20px 45px rgba(0,0,0,0.15);
   color:#0a2e1a;
   text-align:left;
   z-index:20;
-  border: 3px solid rgba(255,215,0,0.4);
+  border: 3px solid rgba(46,139,192,0.4);
   backdrop-filter: blur(5px);
 }
 #prizeLog h3 { margin-top:0; font-size:22px; color:var(--accent); text-align: center; margin-bottom: 20px; }
 #prizeLog ul { list-style-type: none; padding:0; margin:0; }
 #prizeLog ul li { padding:10px 0; border-bottom:3px dashed rgba(10,46,26,0.2); font-size:17px; display:flex; justify-content:space-between; align-items:center; transition: all 0.4s ease; }
-#prizeLog ul li:hover { background: rgba(255,215,0,0.15); padding-left: 15px; border-radius: 8px; }
+#prizeLog ul li:hover { background: rgba(46,139,192,0.15); padding-left: 15px; border-radius: 8px; }
 #prizeLog ul li:last-child { border-bottom:none; }
 
 .toast-wrap { position:fixed; left:50%; transform:translateX(-50%); top:25px; z-index:100; pointer-events:none; display:flex; flex-direction:column; gap:12px; align-items:center; }
-.toast { pointer-events:auto; background: linear-gradient(180deg, rgba(255,255,255,0.99), rgba(225,245,255,0.97)); border-radius:18px; padding:18px 25px; color:#0a2e1a; box-shadow: 0 20px 50px rgba(0,0,0,0.2); min-width:320px; display:flex; gap:15px; align-items:center; border:2px solid rgba(255,255,255,0.7); position:relative; backdrop-filter: blur(10px); }
+.toast { pointer-events:auto; background: linear-gradient(135deg, rgba(255,255,255,0.99), rgba(225,245,255,0.97)); border-radius:18px; padding:18px 25px; color:#0a2e1a; box-shadow: 0 20px 50px rgba(0,0,0,0.2); min-width:320px; display:flex; gap:15px; align-items:center; border:2px solid rgba(255,255,255,0.7); position:relative; backdrop-filter: blur(10px); }
 .toast.info{ border-left:10px solid #4aa3ff; }
 .toast.success{ border-left:10px solid #28a745; }
 .toast.error{ border-left:10px solid #ff4d6d; font-weight:800; }
@@ -759,7 +762,7 @@ footer {
   padding:45px 55px; 
   text-align:center; 
   box-shadow: 
-    0 50px 120px rgba(2,24,60,0.5),
+    0 50px 120px rgba(12,43,75,0.5),
     0 0 0 1500px rgba(0,0,0,0.7);
   min-width:420px; 
   display:none; 
@@ -779,7 +782,7 @@ footer {
   color: #c41e3a;
   margin-bottom: 20px;
   text-shadow: 0 3px 15px rgba(196,30,58,0.4);
-  background: linear-gradient(45deg, #c41e3a, #2ecc71);
+  background: linear-gradient(45deg, #c41e3a, #2e8bc0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -790,7 +793,7 @@ footer {
   color: #0a2e1a;
   text-align: center;
   padding: 25px 35px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,245,250,0.98));
+  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240,248,255,0.98));
   border-radius: 18px;
   border: 5px solid rgba(196,30,58,0.5);
   display: flex;
@@ -874,15 +877,15 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  box-shadow: 0 20px 50px rgba(12,43,75,0.25);
   transition: transform 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .card-front {
-  background: linear-gradient(135deg, #c41e3a, #2ecc71, #8b0000);
+  background: linear-gradient(135deg, #c41e3a, #2e8bc0, #8b0000);
   color: white;
 }
 .card-inside {
-  background: linear-gradient(135deg, #fff0f5, #ffe4e1, #fffaf0);
+  background: linear-gradient(135deg, #f0f8ff, #e6f7ff, #f0f8ff);
   transform: rotateY(180deg);
   text-align: center;
   justify-content: space-around;
@@ -919,16 +922,16 @@ footer {
 
 /* Rating System */
 .christmas-rating {
-  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,250,245,0.95));
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,248,255,0.95));
   border-radius: 20px;
   padding: 25px;
   margin: 30px auto;
   max-width: 550px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 40px rgba(12,43,75,0.15);
   z-index: 20;
-  border: 3px solid rgba(255,215,0,0.4);
+  border: 3px solid rgba(46,139,192,0.4);
   backdrop-filter: blur(5px);
 }
 .christmas-rating h4 {
@@ -966,16 +969,16 @@ footer {
 
 /* Christmas Countdown */
 .christmas-countdown {
-  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,250,245,0.95));
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,248,255,0.95));
   border-radius: 20px;
   padding: 25px;
   margin: 20px auto;
   max-width: 550px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 40px rgba(12,43,75,0.15);
   z-index: 20;
-  border: 3px solid rgba(220,20,60,0.4);
+  border: 3px solid rgba(46,139,192,0.4);
   backdrop-filter: blur(5px);
 }
 .countdown-title {
@@ -990,17 +993,17 @@ footer {
   gap: 20px;
 }
 .countdown-item {
-  background: linear-gradient(135deg, #c41e3a, #2ecc71, #8b0000);
+  background: linear-gradient(135deg, #c41e3a, #2e8bc0, #1a4a7a);
   color: white;
   padding: 15px;
   border-radius: 15px;
   min-width: 85px;
-  box-shadow: 0 10px 25px rgba(196,30,58,0.4);
+  box-shadow: 0 10px 25px rgba(46,139,192,0.4);
   transition: all 0.3s ease;
 }
 .countdown-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(196,30,58,0.5);
+  box-shadow: 0 15px 30px rgba(46,139,192,0.5);
 }
 .countdown-number {
   font-size: 36px;
@@ -1016,16 +1019,16 @@ footer {
 
 /* Final Christmas Gift */
 .final-gift {
-  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(255,250,240,0.98));
+  background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(240,248,255,0.98));
   border-radius: 25px;
   padding: 30px;
   margin: 30px auto;
   max-width: 600px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 50px rgba(12,43,75,0.2);
   z-index: 20;
-  border: 5px solid rgba(255,215,0,0.6);
+  border: 5px solid rgba(46,139,192,0.6);
   backdrop-filter: blur(5px);
   display: none;
 }
@@ -1048,9 +1051,9 @@ footer {
   line-height: 1.6;
   color: #0a2e1a;
   padding: 20px;
-  background: linear-gradient(135deg, rgba(255,245,250,0.8), rgba(255,250,245,0.8));
+  background: linear-gradient(135deg, rgba(255,245,250,0.8), rgba(240,248,255,0.8));
   border-radius: 15px;
-  border: 3px solid rgba(220,20,60,0.3);
+  border: 3px solid rgba(46,139,192,0.3);
   margin-bottom: 20px;
 }
 .gift-emoji {
@@ -1254,7 +1257,7 @@ And may the coming year be your best one yet! 🎊
     <p>🎊 HO HO HO! MERRY CHRISTMAS! 🎊</p>
     <p>🎁 You've completed all your spins! 🎁</p>
     <p>✨ Your Final Christmas Gift is: ✨</p>
-    <p><strong>🎄 SURPRISE GIFT BOX + CHRISTMAS DINNER 🍗</strong></p>
+    <p><strong>🎄 DINNER NIGHT + SWIMMING POOL 🍗</strong></p>
     <p>🎅 + UNLIMITED HOLIDAY JOY 🎅</p>
     <p>💖 + LIFETIME OF HAPPINESS & CHEER 💖</p>
   </div>
@@ -1325,6 +1328,7 @@ And may the coming year be your best one yet! 🎊
       </video>
       <div class="video-play-button">▶️</div>
     </div>
+    
     <div class="video-item" onclick="openVideoLightbox('christmas_video4.mp4')">
       <video preload="metadata" muted loop playsinline>
         <source src="christmas_video4.mp4" type="video/mp4">
@@ -1345,6 +1349,9 @@ And may the coming year be your best one yet! 🎊
   <img src="christmas4.jpg" alt="Christmas memory 4" class="gallery-medium">
   <img src="christmas5.jpg" alt="Christmas memory 5" class="gallery-medium">
   <img src="christmas6.jpg" alt="Christmas memory 6" class="gallery-small">
+   <img src="christmas7.jpg" alt="Christmas memory 7" class="gallery-small">
+    <img src="christmas8.jpg" alt="Christmas memory 8" class="gallery-small">
+     <img src="christmas9.jpg" alt="Christmas memory 9" class="gallery-small">
 </div>
 
 <div class="caption" id="caption">
@@ -1370,7 +1377,7 @@ And may the coming year bring happiness near and dear! 🎊
 </footer>
 
 <!-- SHARE BUTTON AT BOTTOM -->
-<button id="shareBtn"><i class="fab fa-whatsapp"></i> 📤 SHARE MY PRIZE WITH FRIENDS! 📤</button>
+<button id="shareBtn"><i class="fab fa-whatsapp"></i> 📤 SHARE MY PRIZE WITH BLESS! 📤</button>
 
 <div class="toast-wrap" id="toastWrap" aria-hidden="true"></div>
 <div class="win-banner" id="winBanner" role="dialog" aria-live="assertive" aria-hidden="true">
@@ -1398,7 +1405,7 @@ const items = [
 
 let ADMIN_FIXED_WIN = [8, 5]; // indices: 8=VOUCHER BUNDLE, 5=DINNER NIGHT
 
-const colors = ['#c41e3a','#2ecc71','#facc15','#22c55e','#14b8a6','#3b82f6','#6366f1','#8b5cf6','#FFD700','#f43f5e','#84cc16','#0ea5e9'];
+const colors = ['#c41e3a','#2e8bc0','#facc15','#22c55e','#14b8a6','#3b82f6','#6366f1','#8b5cf6','#FFD700','#f43f5e','#84cc16','#0ea5e9'];
 
 const total = items.length;
 const angle = (2 * Math.PI) / total;
@@ -1655,7 +1662,7 @@ function showWin(text, ms=3000){
 
 function createConfettiBurst(count = 100) {
   const confettiContainer = document.querySelector('.confetti');
-  const colors = ['#FFD700', '#c41e3a', '#2ecc71', '#00FFFF', '#7CFC00', '#FFA500', '#9370DB', '#00CED1', '#FF69B4'];
+  const colors = ['#FFD700', '#c41e3a', '#2e8bc0', '#00FFFF', '#7CFC00', '#FFA500', '#9370DB', '#00CED1', '#FF69B4'];
   
   for(let i = 0; i < count; i++) {
     const confetti = document.createElement('span');
@@ -1896,14 +1903,14 @@ onReady(()=> {
   if (isMobile) {
     input = prompt("Enter password (12345):");
   } else {
-    input = prompt("🎄✨ WELCOME TO YOUR CHRISTMAS CELEBRATION, GOOD LUCK IN SPINNING YOUR WHEEL! ✨🎄\n\n🔐 Enter the secret password to begin the party! 🎉\n\n💡 Hint: It's 12345\n\nPassword:");
+    input = prompt("🎄✨ WELCOME TO  CHRISTMAS CELEBRATION YOU ARE LUCKY TO BE THE 5TH LINK CLICK, GOOD LUCK IN SPINNING YOUR WHEEL! ✨🎄\n\n🔐 Enter the secret password to begin the party! 🎉\n\n💡 Hint: It's 12345\n\nPassword:");
   }
   
   if (input !== PASSWORD) {
     showToast("❌ Wrong password! Access denied. 🔒", 'error', 2500);
     setTimeout(()=> { 
       document.body.innerHTML = `
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: linear-gradient(135deg, #c41e3a 0%, #2ecc71 100%); color: white; text-align: center; padding: 20px;">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: linear-gradient(135deg, #0c2b4b 0%, #2e8bc0 100%); color: white; text-align: center; padding: 20px;">
           <h1 style="font-size: ${isMobile ? '32px' : '52px'}; margin-bottom: 25px;">🎁🔒 ACCESS DENIED 🔒🎁</h1>
           <p style="font-size: ${isMobile ? '18px' : '22px'}; margin-bottom: 20px;">❌ Incorrect password! Please refresh and try again. 🔄</p>
           <p style="margin-top: 20px; opacity: 0.9; font-size: ${isMobile ? '16px' : '18px'};">💡 Hint: The ENTRY password is <strong>12345</strong> 🎯</p>
@@ -1915,7 +1922,7 @@ onReady(()=> {
   }
   
   setTimeout(() => {
-    showToast('🎄✨ WELCOME TO YOUR CHRISTMAS CELEBRATION, GOOD LUCK IN SPINNING YOUR WHEEL! 🎅✨', 'success', 3500);
+    showToast('🎄✨ WELCOME TO THE CHRISTMAS CELEBRATION, GOOD LUCK IN SPINNING THE WHEEL! 🎅✨', 'success', 3500);
     createConfettiBurst(300);
   }, 1500);
   
